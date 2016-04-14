@@ -1,6 +1,7 @@
 // MAIN CONTROLLER
 function mainController($scope, $http, todoService) {
-	$scope.title = "Todo List";
+	$scope.number = 1;
+	$scope.word = "azerty";
 	
 	function load(){
 		todoService.get().then(function(res){
