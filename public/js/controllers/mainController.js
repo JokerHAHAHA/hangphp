@@ -2,7 +2,7 @@
 function mainController($scope, $http, todoService) {
 	$scope.number = 0;
 	$scope.good = [];
-	$scope.white = "";
+	$scope.bad = [];
 	
 	function load(){
 		todoService.get().then(function(res){
@@ -28,20 +28,31 @@ function mainController($scope, $http, todoService) {
 		});
 	}
 
-	$scope.whiteSpace = function(word) {
-		for (var i=0; i<word.length-2; i++) {
-			$scope.white += "_ ";
+	$scope.whiteSpace = function() {
+
+		$scope.word = $scope.word.toUpperCase();
+		$scope.word = $scope.word.split('');
+
+		$scope.good.push($scope.word[0]);
+		
+		for (var i=0; i<$scope.word.length-2; i++) {
+			$scope.good.push("_ ");
 		}
-		$scope.good.push(word[0]);
-		$scope.good.push(word[word.length-1]);
+		
+		$scope.good.push($scope.word[$scope.word.length-1]);
 	}
 
 	$scope.check = function(letter) {
-		console.log($scope.word.indexOf(letter));
-		console.log($scope.word);
-		if ($scope.word.indexOf('z') != -1) {
-			
+		var indexLetter = $scope.word.indexOf(letter);
+		if (indexLetter != -1) {
+			$scope.good.splice(indexLetter, 1, letter);
+
+			$scope.word.splice(indexLetter, 1, 'checked');
+console.log($scope.word);
+			// if (indexLetter != -1) $scope.check(letter);
 		}
+		else
+			$scope.bad.push(letter);
 	}
 
 	load();

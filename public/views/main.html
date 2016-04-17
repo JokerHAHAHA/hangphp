@@ -2,14 +2,15 @@
 	<div ng-show="number == 0" class="container">
 		<label>Quel mot tu veux faires d'viner ?</label>
 		<input uppercaseOnly ng-model="word" class=form-control>
-		<button ng-click="number = 1; whiteSpace(word)" class="btn btn-success">C'est parti !</button>
+		<hr>
+		<button ng-click="number = 1; whiteSpace()" class="btn btn-success">C'est parti !</button>
 	</div>
 	
-	<div ng-show="number == 1" class="container">
+	<div ng-show="number == 1" class="container game">
 		
-		<span>{{good[0] + " "}}</span>
-		<span>{{white}}</span>
-		<span>{{good[good.length-1]}}</span>
+		<span ng-repeat="n in good track by $index" class="good">
+			<span>{{n}}</span>
+		</span>
 		
 		<hr>
 		
@@ -17,11 +18,12 @@
 		<button ng-click="check('B')" class="btn-success">B</button>
 		<button ng-click="check('C')" class="btn-success">C</button>
 		<button ng-click="check('D')" class="btn-success">D</button>
-		<button ng-click="check('E')" class="btn-success">E</button>
+		<button ng-hide="letter[5]=='E'" ng-click="check('E'); letter[5]='E'" class="btn-success">E</button>
 		<button ng-click="check('F')" class="btn-success">F</button>
 		<button ng-click="check('G')" class="btn-success">G</button>
 		<button ng-click="check('H')" class="btn-success">H</button>
 		<button ng-click="check('I')" class="btn-success">I</button>
+		<hr>
 		<button ng-click="check('J')" class="btn-success">J</button>
 		<button ng-click="check('K')" class="btn-success">K</button>
 		<button ng-click="check('L')" class="btn-success">L</button>
@@ -30,15 +32,23 @@
 		<button ng-click="check('O')" class="btn-success">O</button>
 		<button ng-click="check('P')" class="btn-success">P</button>
 		<button ng-click="check('Q')" class="btn-success">Q</button>
-		<button ng-click="check('R')" class="btn-success">R</button>
+		<hr>
+		<button ng-hide="letter[18]=='R'" ng-click="check('R'); letter[18]='R'" class="btn-success">R</button>
 		<button ng-click="check('S')" class="btn-success">S</button>
-		<button ng-click="check('T')" class="btn-success">T</button>
+		<button ng-hide="letter[20]=='T'" ng-click="check('T'); letter[20]='T'" class="btn-success">T</button>
 		<button ng-click="check('U')" class="btn-success">U</button>
 		<button ng-click="check('V')" class="btn-success">V</button>
 		<button ng-click="check('W')" class="btn-success">W</button>
 		<button ng-click="check('X')" class="btn-success">X</button>
 		<button ng-click="check('Y')" class="btn-success">Y</button>
-		<button ng-click="check('Z')" class="btn-success">Z</button>
+		<button ng-hide="letter[26]=='Z'" ng-click="check('Z'); letter[26]='Z'" class="btn-success">Z</button>
+	</div>
+
+	<hr>
 	
+	<div ng-repeat="n in bad track by $index" class="container bad">
+		<span>
+			<button class="btn btn-warning">{{n}}</button>
+		</span>
 	</div>
 </body>

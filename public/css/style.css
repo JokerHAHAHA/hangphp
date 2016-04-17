@@ -10,3 +10,9 @@ body{
 .navbar-header img:hover{
 	transform: rotate(360deg);
 }  
+.game, .bad{
+	text-align: center;
+}
+.good{
+	font-size: 400%;
+}
