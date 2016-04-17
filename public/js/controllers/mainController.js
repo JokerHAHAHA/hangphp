@@ -46,10 +46,9 @@ function mainController($scope, $http, todoService) {
 		var indexLetter = $scope.word.indexOf(letter);
 		if (indexLetter != -1) {
 			$scope.good.splice(indexLetter, 1, letter);
-
 			$scope.word.splice(indexLetter, 1, 'checked');
-console.log($scope.word);
-			// if (indexLetter != -1) $scope.check(letter);
+
+			if ($scope.word.indexOf(letter) != -1) $scope.check(letter);
 		}
 		else
 			$scope.bad.push(letter);

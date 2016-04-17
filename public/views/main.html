@@ -1,4 +1,5 @@
 <body>
+	<hr>
 	<div ng-show="number == 0" class="container">
 		<label>Quel mot tu veux faires d'viner ?</label>
 		<input uppercaseOnly ng-model="word" class=form-control>
@@ -13,42 +14,47 @@
 		</span>
 		
 		<hr>
-		
-		<button ng-click="check('A')" class="btn-success">A</button>
-		<button ng-click="check('B')" class="btn-success">B</button>
-		<button ng-click="check('C')" class="btn-success">C</button>
-		<button ng-click="check('D')" class="btn-success">D</button>
-		<button ng-hide="letter[5]=='E'" ng-click="check('E'); letter[5]='E'" class="btn-success">E</button>
-		<button ng-click="check('F')" class="btn-success">F</button>
-		<button ng-click="check('G')" class="btn-success">G</button>
-		<button ng-click="check('H')" class="btn-success">H</button>
-		<button ng-click="check('I')" class="btn-success">I</button>
 		<hr>
-		<button ng-click="check('J')" class="btn-success">J</button>
-		<button ng-click="check('K')" class="btn-success">K</button>
-		<button ng-click="check('L')" class="btn-success">L</button>
-		<button ng-click="check('M')" class="btn-success">M</button>
-		<button ng-click="check('N')" class="btn-success">N</button>
-		<button ng-click="check('O')" class="btn-success">O</button>
-		<button ng-click="check('P')" class="btn-success">P</button>
-		<button ng-click="check('Q')" class="btn-success">Q</button>
+		<hr>
+		
+		<h3>Les lettres possibles sont :</h3>
+		<button ng-hide="letter[1]=='A'" ng-click="check('A'); letter[1]='A'" class="btn-success">A</button>
+		<button ng-hide="letter[2]=='B'" ng-click="check('B'); letter[2]='B'" class="btn-success">B</button>
+		<button ng-hide="letter[3]=='C'" ng-click="check('C'); letter[3]='C'" class="btn-success">C</button>
+		<button ng-hide="letter[4]=='D'" ng-click="check('D'); letter[4]='D'" class="btn-success">D</button>
+		<button ng-hide="letter[5]=='E'" ng-click="check('E'); letter[5]='E'" class="btn-success">E</button>
+		<button ng-hide="letter[6]=='F'" ng-click="check('F'); letter[6]='F'" class="btn-success">F</button>
+		<button ng-hide="letter[7]=='G'" ng-click="check('G'); letter[7]='G'" class="btn-success">G</button>
+		<button ng-hide="letter[8]=='H'" ng-click="check('H'); letter[8]='H'" class="btn-success">H</button>
+		<button ng-hide="letter[9]=='I'" ng-click="check('I'); letter[9]='I'" class="btn-success">I</button>
+		<hr>
+		<button ng-hide="letter[10]=='J'" ng-click="check('J'); letter[10]='J'" class="btn-success">J</button>
+		<button ng-hide="letter[11]=='K'" ng-click="check('K'); letter[11]='K'" class="btn-success">K</button>
+		<button ng-hide="letter[12]=='L'" ng-click="check('L'); letter[12]='L'" class="btn-success">L</button>
+		<button ng-hide="letter[13]=='M'" ng-click="check('M'); letter[13]='M'" class="btn-success">M</button>
+		<button ng-hide="letter[14]=='N'" ng-click="check('N'); letter[14]='N'" class="btn-success">N</button>
+		<button ng-hide="letter[15]=='O'" ng-click="check('O'); letter[15]='O'" class="btn-success">O</button>
+		<button ng-hide="letter[16]=='P'" ng-click="check('P'); letter[16]='P'" class="btn-success">P</button>
+		<button ng-hide="letter[17]=='Q'" ng-click="check('Q'); letter[17]='Q'" class="btn-success">Q</button>
 		<hr>
 		<button ng-hide="letter[18]=='R'" ng-click="check('R'); letter[18]='R'" class="btn-success">R</button>
-		<button ng-click="check('S')" class="btn-success">S</button>
+		<button ng-hide="letter[19]=='S'" ng-click="check('S'); letter[19]='S'" class="btn-success">S</button>
 		<button ng-hide="letter[20]=='T'" ng-click="check('T'); letter[20]='T'" class="btn-success">T</button>
-		<button ng-click="check('U')" class="btn-success">U</button>
-		<button ng-click="check('V')" class="btn-success">V</button>
-		<button ng-click="check('W')" class="btn-success">W</button>
-		<button ng-click="check('X')" class="btn-success">X</button>
-		<button ng-click="check('Y')" class="btn-success">Y</button>
+		<button ng-hide="letter[21]=='U'" ng-click="check('U'); letter[21]='U'" class="btn-success">U</button>
+		<button ng-hide="letter[22]=='V'" ng-click="check('V'); letter[22]='V'" class="btn-success">V</button>
+		<button ng-hide="letter[23]=='W'" ng-click="check('W'); letter[23]='W'" class="btn-success">W</button>
+		<button ng-hide="letter[24]=='X'" ng-click="check('X'); letter[24]='X'" class="btn-success">X</button>
+		<button ng-hide="letter[25]=='Y'" ng-click="check('Y'); letter[25]='Y'" class="btn-success">Y</button>
 		<button ng-hide="letter[26]=='Z'" ng-click="check('Z'); letter[26]='Z'" class="btn-success">Z</button>
-	</div>
 
-	<hr>
-	
-	<div ng-repeat="n in bad track by $index" class="container bad">
-		<span>
-			<button class="btn btn-warning">{{n}}</button>
+		<hr>
+		<hr>
+		<hr>
+		
+		<h3>Tu as déjà essayé :</h3>
+		<span ng-repeat="n in bad track by $index" class="bad">
+			<span class="btn btn-warning">{{n}}</span>
 		</span>
 	</div>
+
 </body>

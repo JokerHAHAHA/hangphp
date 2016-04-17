@@ -16,3 +16,6 @@ body{
 .good{
 	font-size: 400%;
 }
+hr{
+	border-color: transparent;
+}
