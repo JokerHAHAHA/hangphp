@@ -1,3 +1,6 @@
+html{
+	overflow: hidden;
+}
 body{
 	height: 100vh;
 	width: 100vh;
@@ -15,9 +18,6 @@ body:before{
 	background-size: 100% 100%;
 	z-index: -1;
 	opacity: 0.5;
-}
-view{
-	
 }
 .navbar{
 	background-color: #352A1E;
@@ -37,7 +37,9 @@ label{
 	font-size: 200%
 } 
 .picture{
-	float: right;
+	position: absolute;
+	right: 0;
+	top: 20%;
 	width: 65%;
 }
 .picture img{
@@ -46,17 +48,43 @@ label{
 	width: 60%;
 }
 .buttons{
-	float: left;
+	margin: auto;
+	padding: 2%;
+	position: absolute;
+	bottom: 1%;
+	width: 100%;
 }
-.errors{
-	bottom: 0;
+.buttons span{
+	margin-right: 0.3%;
+    box-shadow: 3px 5px 10px 10px;
 }
-.game, .bad{
+.game{
 	text-align: center;
 }
 .good{
-	margin-top: 50%;
-	font-size: 400%;
+	padding: 0 5%;
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	font-size: 360%;
+}
+.errors{
+	position: absolute;
+	left: 2%;
+	top: 15%;
+}
+.errors .bad{
+	margin-bottom: 2%;
+	display: block;
+}
+.lost{
+	position: absolute;
+	bottom: 30%;
+	left: 16%;
+}
+.lost h1{
+	font-size: 500%;
+	color: red;
 }
 hr{
 	border-color: transparent;
@@ -79,13 +107,13 @@ hr{
     box-shadow: 3px 5px 10px 10px;
     padding: 1.5%;
 }
-.form-control, .inputWord button{
+.form-control, .inputWord span{
 	height: 30%;
 	width: 60%;
 	display: inline-block;
 	position: relative;
 	margin-top: 7%;
 }
-.inputWord button{
+.inputWord span{
 	width: 30%;
 }

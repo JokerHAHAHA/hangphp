@@ -12,7 +12,7 @@ function config($routeProvider) {
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
-    .service('todoService', todoService)
+    .service('mainService', mainService)
 
 
 
