@@ -1,5 +1,27 @@
 body{
-    padding-top: 70px;
+	height: 100vh;
+	width: 100vh;
+}
+body:before{
+	content: "";
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	position: absolute;
+	background-image: url('../assets/angular.jpg');
+	background-repeat: no-repeat;
+	background-position: 0 60px;
+	background-size: 100% 100%;
+	z-index: -1;
+	opacity: 0.5;
+}
+view{
+	
+}
+.navbar{
+	background-color: #352A1E;
+	height: 70px;
 }
 .navbar-border{
 	border-bottom: 3px solid #F0DB4F;
@@ -9,13 +31,61 @@ body{
 }
 .navbar-header img:hover{
 	transform: rotate(360deg);
-}  
+} 
+label{
+	width: 100%;
+	font-size: 200%
+} 
+.picture{
+	float: right;
+	width: 65%;
+}
+.picture img{
+	right: 0;
+	bottom: 0;
+	width: 60%;
+}
+.buttons{
+	float: left;
+}
+.errors{
+	bottom: 0;
+}
 .game, .bad{
 	text-align: center;
 }
 .good{
+	margin-top: 50%;
 	font-size: 400%;
 }
 hr{
 	border-color: transparent;
+}
+.inputWord{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+    width: 58%;
+    text-align: center;
+    margin: auto;
+    margin-top: 15%;
+    box-shadow: 3px 5px 10px 10px;
+    padding: 1.5%;
+}
+.form-control, .inputWord button{
+	height: 30%;
+	width: 60%;
+	display: inline-block;
+	position: relative;
+	margin-top: 7%;
+}
+.inputWord button{
+	width: 30%;
 }

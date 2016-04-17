@@ -1,22 +1,39 @@
 <body>
-	<hr>
-	<div ng-show="number == 0" class="container">
-		<label>Quel mot tu veux faires d'viner ?</label>
+	<div ng-show="number == 0" class="inputWord">
+
+		<label>C'est quoi le mot qu'tu veux lui faire d'viner ?</label>
+		<hr>
 		<input uppercaseOnly ng-model="word" class=form-control>
 		<hr>
 		<button ng-click="number = 1; whiteSpace()" class="btn btn-success">C'est parti !</button>
 	</div>
 	
+
+
+	
 	<div ng-show="number == 1" class="container game">
-		
-		<span ng-repeat="n in good track by $index" class="good">
-			<span>{{n}}</span>
-		</span>
-		
-		<hr>
-		<hr>
-		<hr>
-		
+
+		 <div class="picture">
+			<img ng-show="numberPhp == 0" src="assets/php0.png" alt="" class="php0">
+			<img ng-show="numberPhp == 1" src="assets/php1.png" alt="" class="php1">
+			<img ng-show="numberPhp == 2" src="assets/php2.png" alt="" class="php2">
+			<img ng-show="numberPhp == 3" src="assets/php3.png" alt="" class="php3">
+			<img ng-show="numberPhp == 4" src="assets/php4.png" alt="" class="php4">
+			<img ng-show="numberPhp == 5" src="assets/php5.png" alt="" class="php5">
+			<img ng-show="numberPhp == 6" src="assets/php6.png" alt="" class="php6">
+			<img ng-show="numberPhp == 7" src="assets/php7.png" alt="" class="php7">
+			<img ng-show="numberPhp == 8" src="assets/php8.png" alt="" class="php8">
+		</div>
+	
+	<span ng-repeat="n in good track by $index" class="good">
+		<span>{{n}}</span>
+	</span>
+
+	<hr>
+	<hr>
+	<hr>
+
+	<div class="buttons">
 		<h3>Les lettres possibles sont :</h3>
 		<button ng-hide="letter[1]=='A'" ng-click="check('A'); letter[1]='A'" class="btn-success">A</button>
 		<button ng-hide="letter[2]=='B'" ng-click="check('B'); letter[2]='B'" class="btn-success">B</button>
@@ -46,15 +63,18 @@
 		<button ng-hide="letter[24]=='X'" ng-click="check('X'); letter[24]='X'" class="btn-success">X</button>
 		<button ng-hide="letter[25]=='Y'" ng-click="check('Y'); letter[25]='Y'" class="btn-success">Y</button>
 		<button ng-hide="letter[26]=='Z'" ng-click="check('Z'); letter[26]='Z'" class="btn-success">Z</button>
+	</div>
 
-		<hr>
-		<hr>
-		<hr>
-		
+	<hr>
+	<hr>
+	<hr>
+
+	<div class="errors">
 		<h3>Tu as déjà essayé :</h3>
 		<span ng-repeat="n in bad track by $index" class="bad">
 			<span class="btn btn-warning">{{n}}</span>
 		</span>
 	</div>
+</div>
 
 </body>

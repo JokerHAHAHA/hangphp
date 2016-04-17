@@ -3,7 +3,7 @@ function mainController($scope, $http, todoService) {
 	$scope.number = 0;
 	$scope.good = [];
 	$scope.bad = [];
-	
+
 	function load(){
 		todoService.get().then(function(res){
 			$scope.todos = res.data;
@@ -30,6 +30,7 @@ function mainController($scope, $http, todoService) {
 
 	$scope.whiteSpace = function() {
 
+		$scope.numberPhp = 0;
 		$scope.word = $scope.word.toUpperCase();
 		$scope.word = $scope.word.split('');
 
@@ -40,6 +41,9 @@ function mainController($scope, $http, todoService) {
 		}
 		
 		$scope.good.push($scope.word[$scope.word.length-1]);
+		
+		$scope.word.splice(0, 1, 'checked');
+		$scope.word.splice($scope.word.length-1, 1, 'checked');
 	}
 
 	$scope.check = function(letter) {
@@ -51,7 +55,8 @@ function mainController($scope, $http, todoService) {
 			if ($scope.word.indexOf(letter) != -1) $scope.check(letter);
 		}
 		else
-			$scope.bad.push(letter);
+			$scope.numberPhp++;
+		$scope.bad.push(letter);
 	}
 
 	load();
