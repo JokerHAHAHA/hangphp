@@ -3,9 +3,11 @@
 
 		<label>C'est quoi le mot qu'tu veux lui faire d'viner ?</label>
 		<hr>
-		<input uppercaseOnly ng-model="word" class=form-control>
+		<input ng-model="word" class=form-control>
 		<hr>
-		<button ng-click="add(word.toUpperCase()); number = 1; whiteSpace()" class="btn btn-success">C'est parti !</button>
+		<button ng-click="add(word.toUpperCase())" class="btn btn-success">C'est parti !</button>
+		<p ng-hide="wordPb == 1"></p>
+		<p ng-show="wordPb == 1" style="color: red; text-align: center;">le mot n'est pas valide : uniquement des lettres et pas d'accent !</p>
 	</div>
 	
 
