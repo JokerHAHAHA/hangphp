@@ -14,15 +14,15 @@ app.use(bodyParser.json());										// parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride('X-HTTP-Method-Override'));				// override with the X-HTTP-Method-Override header in the request
 // Mongoose ====================================================================
-//require('./config/database');
+require('./config/database');
 // Serveur ===================================================================
 var server = http.Server(app);
 // routes ======================================================================
-//require('./app/routes')(app);
-//process.on('SIGINT', function() {
-//  console.log('Stopping...');
-//  process.exit();
-//});
+require('./app/routes')(app);
+process.on('SIGINT', function() {
+  console.log('Stopping...');
+  process.exit();
+});
 // listen (start app with node server.js) ======================================
 server.listen(port);
 console.log('App listening on port ' + port);
