@@ -3,13 +3,19 @@ function mainController($scope, mainService) {
 	$scope.number = 0;
 	$scope.good = [];
 	$scope.bad = [];
+	$scope.wordPb = 0;
 	mainService.create('');
 
 	$scope.add = function(data){
-		mainService.create(data);
-	}
-
-	$scope.whiteSpace = function() {
+		
+		if (/^[a-zA-Z]{3,}$/.test(data)){
+			mainService.create(data);
+		}
+		else {
+			$scope.wordPb = 1;
+			$scope.word = '';
+			return;
+		}
 
 		$scope.numberPhp = 0;
 		$scope.word = $scope.word.toUpperCase();
@@ -24,6 +30,8 @@ function mainController($scope, mainService) {
 
 		$scope.word.splice(0, 1, 'checked');
 		$scope.word.splice($scope.word.length-1, 1, 'checked');
+
+		$scope.number = 1;
 	}
 
 	$scope.countBad = 0;

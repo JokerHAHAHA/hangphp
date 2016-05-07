@@ -1,0 +1,12 @@
+<body>
+	<div ng-show="number == -1" class="login">
+
+		<label>C'est quoi le mot qu'tu veux lui faire d'viner ?</label>
+		<hr>
+		<input ng-model="word" class=form-control>
+		<hr>
+		<button ng-click="add(word.toUpperCase())" class="btn btn-success">C'est parti !</button>
+		<p ng-hide="wordPb == 1"></p>
+		<p ng-show="wordPb == 1" style="color: red; text-align: center;">le mot n'est pas valide : uniquement des lettres et pas d'accent !</p>
+	</div>
+</body>
