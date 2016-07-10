@@ -5,7 +5,7 @@ body{
 	height: 100vh;
 	width: 100vh;
 }
-body:before{
+body:after{
 	content: "";
 	top: 0;
 	bottom: 0;
@@ -14,7 +14,7 @@ body:before{
 	position: absolute;
 	background-image: url('../assets/angular.jpg');
 	background-repeat: no-repeat;
-	background-position: 0 60px;
+	background-position: 0 0;
 	background-size: 100% 100%;
 	z-index: -1;
 	opacity: 0.5;
